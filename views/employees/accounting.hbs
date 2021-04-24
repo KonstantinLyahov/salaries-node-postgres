@@ -1,0 +1,25 @@
+<h3>Расчетные</h3>
+<form class="form" action="/employees/{{ employee_id }}/accounting" method="post">
+    <div class="form-row">
+        <div class="form-group col-auto">
+            <label>Год:</label>
+            <input type="number" name="year" class="form-control" min="2000" required>
+        </div>
+        <div class="form-group col-auto">
+            <label>Месяц:</label>
+            <input type="number" name="month" class="form-control" min="1" max="12" required>
+        </div>
+        <div class="form-group col-auto">
+            <label>Кол-во рабочих часов:</label>
+            <input type="number" name="hours" class="form-control" min="0" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-dark">Добавить</button>
+</form>
+
+{{#each accounting}}
+    <hr>    
+    <p>Год: {{ this.year }}</p>
+    <p>Месяц: {{ this.month }}</p>
+    <p>Проработано часов: {{ this.hours }}</p>
+{{/each}}

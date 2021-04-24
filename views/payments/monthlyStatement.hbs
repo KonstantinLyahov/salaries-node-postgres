@@ -1,0 +1,33 @@
+<form class="form" method="get">
+    <div class="form-row">
+        <div class="form-group col-auto">
+            <label>Год:</label>
+            <input type="number" name="year" class="form-control" min="2000" required>
+        </div>
+        <div class="form-group col-auto">
+            <label>Месяц:</label>
+            <input type="number" name="month" class="form-control" min="1" max="12" required>
+        </div>
+    </div>
+    <button class="btn btn-dark" type="submit">Вывести месячную ведомость</button>
+</form>
+
+{{#if monthlyStatement}}
+<h2>Месячная ведомость за {{ month }} месяц {{ year }} года</h2>
+<table class="table">
+    <thead>
+        <th>Сотрудник</th>
+        <th>Выплачено</th>
+        <th>Дата выплаты</th>
+    </thead>
+    <tbody>
+        {{#each monthlyStatement as |payment|}}
+        <tr>
+            <td>{{ payment.fullname }}</td>
+            <td>{{ payment.paid }}</td>
+            <td>{{ payment.paid_date }}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{/if}}

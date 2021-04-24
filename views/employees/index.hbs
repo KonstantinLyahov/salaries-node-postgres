@@ -1,0 +1,19 @@
+<h2>Сотрудники</h2>
+<a href="/employees/create" class="btn btn-primary">Добавить сотрудника</a>
+<a href="/employees/deleted" class="btn btn-dark">Скачать архив удаленных сотрудников</a>
+<table class="table" id="employees">
+    <thead>
+        <th>ФИО</th>
+        <th>Дата рождения</th>
+        <th>Позиция</th>
+    </thead>
+    <tbody>
+        {{#each employees}}
+            <tr data-link="/employees/{{this.id}}">
+                <td>{{this.fullname}}</td>
+                <td>{{this.birth_date}}</td>
+                <td>{{this.name}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

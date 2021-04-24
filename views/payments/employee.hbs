@@ -1,0 +1,27 @@
+<h3>Начислить зарплату сотруднику {{ fullname}}</h3>
+
+<form class="form" method="post">
+    <div class="form-row">
+        <div class="form-group col-auto">
+            <label>Год:</label>
+            <input type="number" name="year" class="form-control" min="2000" required>
+        </div>
+        <div class="form-group col-auto">
+            <label>Месяц:</label>
+            <input type="number" name="month" class="form-control" min="1" max="12" required>
+        </div>
+        <div class="form-group col-auto">
+            <label>Начислено:</label>
+            <input type="number" name="paid" class="form-control" min="0" required>
+        </div>
+    </div>
+    <button type="submit">Начислить</button>
+</form>
+
+{{#each payments}}
+    <hr>
+    <p>Год: {{ this.year }}</p>
+    <p>Месяц: {{ this.month }}</p>
+    <p>Начислено: {{ this.paid }}</p>
+    <p>Дата Начисления: {{ this.paid_date }}</p>
+{{/each}}

@@ -1,0 +1,24 @@
+<h2>Журнал начислений</h2>
+
+<table class="table">
+    <thead>
+        <th>сотруднику</th>
+        <th>действие</th>
+        <th>год</th>
+        <th>месяц</th>
+        <th>выплата</th>
+        <th>дата выполнения операции</th>
+    </thead>
+    <tbody>
+        {{#each logs as |log|}}
+        <tr>
+            <td>{{ log.fullname }}</td>
+            <td>{{ log.operation }}</td>
+            <td>{{ log.year }}</td>
+            <td>{{ log.month }}</td>
+            <td>{{ log.paid }}</td>
+            <td>{{ log.paid_date }}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

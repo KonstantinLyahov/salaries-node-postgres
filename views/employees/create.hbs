@@ -1,0 +1,22 @@
+<h2>Добавить Сотрудника</h2>
+<form class="form" action="/employees/create" method="post">
+    <div class="form-group">
+        <label>ФИО:</label>
+        <input type="text" name="fullname" required>
+    </div>
+    <div class="form-group">
+        <label>Дата рождения:</label>
+        <input type="date" value="2000-01-01" name="birth_date" required>
+    </div>
+    <div class="form-group">
+        <label>Позиция:</label>
+        <select name="proffession" required>
+            {{#each proffessions}}                
+                <option value="{{ this.id }}">{{ this.name }}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Добавить</button>
+    </div>
+</form>

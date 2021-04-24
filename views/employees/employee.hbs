@@ -1,0 +1,10 @@
+<h2>Сотрудник</h2>
+<p>ФИО: {{ employee.fullname }}</p>
+<p>Дата рождения: {{ employee.birth_date }}</p>
+<p>Позиция: {{ employee.name }}</p>
+<p>Оплата за час: {{ employee.payment_per_hour }}</p>
+<hr>
+<a href="/employees/{{ employee.id }}/accounting" class="btn btn-dark">Расчетные</a>
+<a href="/payments/{{ employee.id }}" class="btn btn-dark">Начисления</a>
+<hr>
+<a href="/employees/{{ employee.id }}/delete" class="btn btn-danger">Удалить</a>
